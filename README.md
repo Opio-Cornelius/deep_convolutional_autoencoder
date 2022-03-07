@@ -5,6 +5,3 @@ This repository is for convolutional autoencoder algorithms that can be used to 
 1. Extract the model variables and download the satellite observations. Make sure that they have matching dimensions. 
 2. Save all data as numpy arrays stacked together, and then feed them into the algorithm.
 3. Run the script in separate sections as you save the output generated.
-
-
-![WRF_DCA_2](https://user-images.githubusercontent.com/99320162/157046895-6d0ab5e2-bd86-45a1-8e0e-b85091dcb845.png)
