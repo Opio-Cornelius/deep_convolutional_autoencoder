@@ -175,10 +175,10 @@ sn4_m = sn4_m/scale_model_test
 
 
 # Divide by 1e18
-sn1_p_e = (sn1_p/1e18)*1.1
-sn2_p_e = (sn2_p/1e18)*1.5
-sn3_p_e = (sn3_p/1e18)*1.4
-sn4_p_e = (sn4_p/1e18)*1.2
+sn1_p_e = (sn1_p/1e18)
+sn2_p_e = (sn2_p/1e18)
+sn3_p_e = (sn3_p/1e18)
+sn4_p_e = (sn4_p/1e18)
 
 sn1_m_e = sn1_m/1e18
 sn2_m_e = sn2_m/1e18
@@ -505,32 +505,32 @@ may_model_std = np.std(model_test[11,:,:,0]/scale_model_test/1e18)
 
 
 #Prediction means
-june_dca = np.mean(prediction[0,:,:,0]*1.1/scale_model_val/1e18)
-july_dca = np.mean(prediction[1,:,:,0]*1.1/scale_model_val/1e18)
-aug_dca = np.mean(prediction[2,:,:,0]*1.1/scale_model_val/1e18)
-sep_dca = np.mean(prediction[3,:,:,0]*1.5/scale_model_val/1e18)
-oct_dca = np.mean(prediction[4,:,:,0]*1.5/scale_model_val/1e18)
-nov_dca = np.mean(prediction[5,:,:,0]*1.5/scale_model_val/1e18)
-dec_dca = np.mean(prediction[6,:,:,0]*1.4/scale_model_val/1e18)
-jan_dca = np.mean(prediction[7,:,:,0]*1.4/scale_model_val/1e18)
-feb_dca = np.mean(prediction[8,:,:,0]*1.4/scale_model_val/1e18)
-mar_dca = np.mean(prediction[9,:,:,0]*1.2/scale_model_val/1e18)
-apr_dca = np.mean(prediction[10,:,:,0]*1.2/scale_model_val/1e18)
-may_dca = np.mean(prediction[11,:,:,0]*1.2/scale_model_val/1e18)
+june_dca = np.mean(prediction[0,:,:,0]/scale_model_val/1e18)
+july_dca = np.mean(prediction[1,:,:,0]/scale_model_val/1e18)
+aug_dca = np.mean(prediction[2,:,:,0]/scale_model_val/1e18)
+sep_dca = np.mean(prediction[3,:,:,0]/scale_model_val/1e18)
+oct_dca = np.mean(prediction[4,:,:,0]/scale_model_val/1e18)
+nov_dca = np.mean(prediction[5,:,:,0]/scale_model_val/1e18)
+dec_dca = np.mean(prediction[6,:,:,0]/scale_model_val/1e18)
+jan_dca = np.mean(prediction[7,:,:,0]/scale_model_val/1e18)
+feb_dca = np.mean(prediction[8,:,:,0]/scale_model_val/1e18)
+mar_dca = np.mean(prediction[9,:,:,0]/scale_model_val/1e18)
+apr_dca = np.mean(prediction[10,:,:,0]/scale_model_val/1e18)
+may_dca = np.mean(prediction[11,:,:,0]/scale_model_val/1e18)
 
 #Prediction standard deviations
-june_dca_std = np.std(prediction[0,:,:,0]*1.1/scale_model_val/1e18)
-july_dca_std = np.std(prediction[1,:,:,0]*1.1/scale_model_val/1e18)
-aug_dca_std = np.std(prediction[2,:,:,0]*1.1/scale_model_val/1e18)
-sep_dca_std = np.std(prediction[3,:,:,0]*1.5/scale_model_val/1e18)
-oct_dca_std = np.std(prediction[4,:,:,0]*1.5/scale_model_val/1e18)
-nov_dca_std = np.std(prediction[5,:,:,0]*1.5/scale_model_val/1e18)
-dec_dca_std = np.std(prediction[6,:,:,0]*1.4/scale_model_val/1e18)
-jan_dca_std = np.std(prediction[7,:,:,0]*1.4/scale_model_val/1e18)
-feb_dca_std = np.std(prediction[8,:,:,0]*1.4/scale_model_val/1e18)
-mar_dca_std = np.std(prediction[9,:,:,0]*1.2/scale_model_val/1e18)
-apr_dca_std = np.std(prediction[10,:,:,0]*1.2/scale_model_val/1e18)
-may_dca_std = np.std(prediction[11,:,:,0]*1.2/scale_model_val/1e18)
+june_dca_std = np.std(prediction[0,:,:,0]/scale_model_val/1e18)
+july_dca_std = np.std(prediction[1,:,:,0]/scale_model_val/1e18)
+aug_dca_std = np.std(prediction[2,:,:,0]/scale_model_val/1e18)
+sep_dca_std = np.std(prediction[3,:,:,0]/scale_model_val/1e18)
+oct_dca_std = np.std(prediction[4,:,:,0]/scale_model_val/1e18)
+nov_dca_std = np.std(prediction[5,:,:,0]/scale_model_val/1e18)
+dec_dca_std = np.std(prediction[6,:,:,0]/scale_model_val/1e18)
+jan_dca_std = np.std(prediction[7,:,:,0]/scale_model_val/1e18)
+feb_dca_std = np.std(prediction[8,:,:,0]/scale_model_val/1e18)
+mar_dca_std = np.std(prediction[9,:,:,0]/scale_model_val/1e18)
+apr_dca_std = np.std(prediction[10,:,:,0]/scale_model_val/1e18)
+may_dca_std = np.std(prediction[11,:,:,0]/scale_model_val/1e18)
 
 
 
@@ -550,18 +550,18 @@ NMB_may = np.mean((model_test[11,:,:,0]/scale_model_test/1e18) - (obs_test[11,:,
 
 
 #NMB for WRF-DCA
-NMB_dca_june = np.mean((prediction[0,:,:,0]*1.1/scale_model_val/1e18) - (obs_test[0,:,:]/1e18))/np.mean(obs_test[0,:,:]/1e18)
-NMB_dca_july = np.mean((prediction[1,:,:,0]*1.1/scale_model_val/1e18) - (obs_test[1,:,:]/1e18))/np.mean(obs_test[1,:,:]/1e18)
-NMB_dca_aug = np.mean((prediction[2,:,:,0]*1.1/scale_model_val/1e18) - (obs_test[2,:,:]/1e18))/np.mean(obs_test[2,:,:]/1e18)
-NMB_dca_sep = np.mean((prediction[3,:,:,0]*1.5/scale_model_val/1e18) - (obs_test[3,:,:]/1e18))/np.mean(obs_test[3,:,:]/1e18)
-NMB_dca_oct = np.mean((prediction[4,:,:,0]*1.5/scale_model_val/1e18) - (obs_test[4,:,:]/1e18))/np.mean(obs_test[4,:,:]/1e18)
-NMB_dca_nov = np.mean((prediction[5,:,:,0]*1.5/scale_model_val/1e18) - (obs_test[5,:,:]/1e18))/np.mean(obs_test[5,:,:]/1e18)
-NMB_dca_dec = np.mean((prediction[6,:,:,0]*1.4/scale_model_val/1e18) - (obs_test[6,:,:]/1e18))/np.mean(obs_test[6,:,:]/1e18)
-NMB_dca_jan = np.mean((prediction[7,:,:,0]*1.4/scale_model_val/1e18) - (obs_test[7,:,:]/1e18))/np.mean(obs_test[7,:,:]/1e18)
-NMB_dca_feb = np.mean((prediction[8,:,:,0]*1.4/scale_model_val/1e18) - (obs_test[8,:,:]/1e18))/np.mean(obs_test[8,:,:]/1e18)
-NMB_dca_mar = np.mean((prediction[9,:,:,0]*1.2/scale_model_val/1e18) - (obs_test[9,:,:]/1e18))/np.mean(obs_test[9,:,:]/1e18)
-NMB_dca_apr = np.mean((prediction[10,:,:,0]*1.2/scale_model_val/1e18) - (obs_test[10,:,:]/1e18))/np.mean(obs_test[10,:,:]/1e18)
-NMB_dca_may = np.mean((prediction[11,:,:,0]*1.2/scale_model_val/1e18) - (obs_test[11,:,:]/1e18))/np.mean(obs_test[11,:,:]/1e18)
+NMB_dca_june = np.mean((prediction[0,:,:,0]/scale_model_val/1e18) - (obs_test[0,:,:]/1e18))/np.mean(obs_test[0,:,:]/1e18)
+NMB_dca_july = np.mean((prediction[1,:,:,0]/scale_model_val/1e18) - (obs_test[1,:,:]/1e18))/np.mean(obs_test[1,:,:]/1e18)
+NMB_dca_aug = np.mean((prediction[2,:,:,0]/scale_model_val/1e18) - (obs_test[2,:,:]/1e18))/np.mean(obs_test[2,:,:]/1e18)
+NMB_dca_sep = np.mean((prediction[3,:,:,0]/scale_model_val/1e18) - (obs_test[3,:,:]/1e18))/np.mean(obs_test[3,:,:]/1e18)
+NMB_dca_oct = np.mean((prediction[4,:,:,0]/scale_model_val/1e18) - (obs_test[4,:,:]/1e18))/np.mean(obs_test[4,:,:]/1e18)
+NMB_dca_nov = np.mean((prediction[5,:,:,0]/scale_model_val/1e18) - (obs_test[5,:,:]/1e18))/np.mean(obs_test[5,:,:]/1e18)
+NMB_dca_dec = np.mean((prediction[6,:,:,0]/scale_model_val/1e18) - (obs_test[6,:,:]/1e18))/np.mean(obs_test[6,:,:]/1e18)
+NMB_dca_jan = np.mean((prediction[7,:,:,0]/scale_model_val/1e18) - (obs_test[7,:,:]/1e18))/np.mean(obs_test[7,:,:]/1e18)
+NMB_dca_feb = np.mean((prediction[8,:,:,0]/scale_model_val/1e18) - (obs_test[8,:,:]/1e18))/np.mean(obs_test[8,:,:]/1e18)
+NMB_dca_mar = np.mean((prediction[9,:,:,0]/scale_model_val/1e18) - (obs_test[9,:,:]/1e18))/np.mean(obs_test[9,:,:]/1e18)
+NMB_dca_apr = np.mean((prediction[10,:,:,0]/scale_model_val/1e18) - (obs_test[10,:,:]/1e18))/np.mean(obs_test[10,:,:]/1e18)
+NMB_dca_may = np.mean((prediction[11,:,:,0]/scale_model_val/1e18) - (obs_test[11,:,:]/1e18))/np.mean(obs_test[11,:,:]/1e18)
 
 
 
@@ -583,18 +583,18 @@ RMSE_may = np.sqrt(np.mean(((model_test[11,:,:,0]/scale_model_test/1e18) - (obs_
 
 
 #RMSE for WRF-DCA
-RMSE_dca_june = np.sqrt(np.mean(((prediction[0,:,:,0]*1.1/scale_model_val/1e18) - (obs_test[0,:,:]/1e18))**2))
-RMSE_dca_july = np.sqrt(np.mean(((prediction[1,:,:,0]*1.1/scale_model_val/1e18) - (obs_test[1,:,:]/1e18))**2))
-RMSE_dca_aug = np.sqrt(np.mean(((prediction[2,:,:,0]*1.1/scale_model_val/1e18) - (obs_test[2:,:]/1e18))**2))
-RMSE_dca_sep = np.sqrt(np.mean(((prediction[3,:,:,0]*1.5/scale_model_val/1e18) - (obs_test[3,:,:]/1e18))**2))
-RMSE_dca_oct = np.sqrt(np.mean(((prediction[4,:,:,0]*1.5/scale_model_val/1e18) - (obs_test[4,:,:]/1e18))**2))
-RMSE_dca_nov = np.sqrt(np.mean(((prediction[5,:,:,0]*1.5/scale_model_val/1e18) - (obs_test[5,:,:]/1e18))**2))
-RMSE_dca_dec = np.sqrt(np.mean(((prediction[6,:,:,0]*1.4/scale_model_val/1e18) - (obs_test[6,:,:]/1e18))**2))
-RMSE_dca_jan = np.sqrt(np.mean(((prediction[7,:,:,0]*1.4/scale_model_val/1e18) - (obs_test[7,:,:]/1e18))**2))
-RMSE_dca_feb = np.sqrt(np.mean(((prediction[8,:,:,0]*1.4/scale_model_val/1e18) - (obs_test[8,:,:]/1e18))**2))
-RMSE_dca_mar = np.sqrt(np.mean(((prediction[9,:,:,0]*1.2/scale_model_val/1e18) - (obs_test[9,:,:]/1e18))**2))
-RMSE_dca_apr = np.sqrt(np.mean(((prediction[10,:,:,0]*1.2/scale_model_val/1e18) - (obs_test[10,:,:]/1e18))**2))
-RMSE_dca_may = np.sqrt(np.mean(((prediction[11,:,:,0]*1.2/scale_model_val/1e18) - (obs_test[11,:,:]/1e18))**2))
+RMSE_dca_june = np.sqrt(np.mean(((prediction[0,:,:,0]/scale_model_val/1e18) - (obs_test[0,:,:]/1e18))**2))
+RMSE_dca_july = np.sqrt(np.mean(((prediction[1,:,:,0]/scale_model_val/1e18) - (obs_test[1,:,:]/1e18))**2))
+RMSE_dca_aug = np.sqrt(np.mean(((prediction[2,:,:,0]/scale_model_val/1e18) - (obs_test[2:,:]/1e18))**2))
+RMSE_dca_sep = np.sqrt(np.mean(((prediction[3,:,:,0]/scale_model_val/1e18) - (obs_test[3,:,:]/1e18))**2))
+RMSE_dca_oct = np.sqrt(np.mean(((prediction[4,:,:,0]/scale_model_val/1e18) - (obs_test[4,:,:]/1e18))**2))
+RMSE_dca_nov = np.sqrt(np.mean(((prediction[5,:,:,0]/scale_model_val/1e18) - (obs_test[5,:,:]/1e18))**2))
+RMSE_dca_dec = np.sqrt(np.mean(((prediction[6,:,:,0]/scale_model_val/1e18) - (obs_test[6,:,:]/1e18))**2))
+RMSE_dca_jan = np.sqrt(np.mean(((prediction[7,:,:,0]/scale_model_val/1e18) - (obs_test[7,:,:]/1e18))**2))
+RMSE_dca_feb = np.sqrt(np.mean(((prediction[8,:,:,0]/scale_model_val/1e18) - (obs_test[8,:,:]/1e18))**2))
+RMSE_dca_mar = np.sqrt(np.mean(((prediction[9,:,:,0]/scale_model_val/1e18) - (obs_test[9,:,:]/1e18))**2))
+RMSE_dca_apr = np.sqrt(np.mean(((prediction[10,:,:,0]/scale_model_val/1e18) - (obs_test[10,:,:]/1e18))**2))
+RMSE_dca_may = np.sqrt(np.mean(((prediction[11,:,:,0]/scale_model_val/1e18) - (obs_test[11,:,:]/1e18))**2))
 
 
 #Write all the statics into a csv file and load them back in
