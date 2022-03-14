@@ -85,6 +85,7 @@ model_test = tf.expand_dims(model_test, axis=-1)
 
 input = layers.Input(shape=(384, 320, 1))
 
+#Encoder
 x = layers.Conv2D(32, (3, 3), activation="relu", padding="same")(input)
 x = layers.MaxPooling2D((2, 2), padding="same")(x)
 x = layers.Conv2D(64, (3, 3), activation="relu", padding="same")(x)
