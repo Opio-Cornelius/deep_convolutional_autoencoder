@@ -489,7 +489,7 @@ cb4_axes = plt.gcf().add_axes([0.89, 0.155, 0.013, 0.255])
 cb4 = plt.colorbar(plt_sn4_dfca, cb4_axes,
                    label='Difference in Accumulated Rainfall (mm)', 
                    orientation='vertical')
-
+plt.show()
 
 
 
