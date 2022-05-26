@@ -634,8 +634,6 @@ may_ls_std= np.std((model_test[11,:,:,0]/scale_model_test)+(mean_o - mean_m))
 
 
 
-
-
 #Calculate Normalized Mean Bias (NMB) for WRF-chem
 NMB_june = np.mean((model_test[0,:,:,0]/scale_model_test) - obs_test[0,:,:])/np.mean(obs_test[0,:,:])
 NMB_july = np.mean((model_test[1,:,:,0]/scale_model_test) - obs_test[1,:,:])/np.mean(obs_test[1,:,:])
