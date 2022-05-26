@@ -174,10 +174,10 @@ diff_sn2 = sn2_m - sn2_o
 diff_sn3 = sn3_m - sn3_o
 diff_sn4 = sn4_m - sn4_o
 
-diff_sn1_dca = sn1_p*2 - sn1_o
-diff_sn2_dca = sn2_p*2 - sn2_o
-diff_sn3_dca = sn3_p*2 - sn3_o
-diff_sn4_dca = sn4_p*2 - sn4_o
+diff_sn1_dca = sn1_p - sn1_o
+diff_sn2_dca = sn2_p - sn2_o
+diff_sn3_dca = sn3_p - sn3_o
+diff_sn4_dca = sn4_p - sn4_o
 
 
 
@@ -336,7 +336,7 @@ plt.ylim([-12.6, 6.6])
 
 
 ax = plt.subplot(7,4,13, projection=ccrs.PlateCarree())
-plt_sn1_p = plt.pcolormesh(coord['lon'], coord['lat'], sn1_p*2, cmap='jet', vmin=4.58, vmax=56.49)
+plt_sn1_p = plt.pcolormesh(coord['lon'], coord['lat'], sn1_p, cmap='jet', vmin=4.58, vmax=56.49)
 ax.coastlines(resolution='10m', color='black', linewidth=0.9)
 lakes_10m = cfeature.NaturalEarthFeature('physical','lakes','10m')
 ax.add_feature(cfeature.BORDERS, linewidth=1.2)
@@ -347,7 +347,7 @@ plt.text(0.13, 0.48, 'WRF_DCA', rotation='vertical', transform=plt.gcf().transFi
 
 
 ax = plt.subplot(7,4,14, projection=ccrs.PlateCarree())
-plt_sn2_p = plt.pcolormesh(coord['lon'], coord['lat'], sn2_p*2, cmap='jet', vmin=4.58, vmax=56.49)
+plt_sn2_p = plt.pcolormesh(coord['lon'], coord['lat'], sn2_p, cmap='jet', vmin=4.58, vmax=56.49)
 ax.coastlines(resolution='10m', color='black', linewidth=0.9)
 lakes_10m = cfeature.NaturalEarthFeature('physical','lakes','10m')
 ax.add_feature(cfeature.BORDERS, linewidth=1.2)
@@ -356,7 +356,7 @@ plt.xlim([28, 43])
 plt.ylim([-12.6, 6.6])
 
 ax = plt.subplot(7,4,15, projection=ccrs.PlateCarree())
-plt_sn3_p = plt.pcolormesh(coord['lon'], coord['lat'], sn3_p*2, cmap='jet', vmin=4.58, vmax=56.49)
+plt_sn3_p = plt.pcolormesh(coord['lon'], coord['lat'], sn3_p, cmap='jet', vmin=4.58, vmax=56.49)
 ax.coastlines(resolution='10m', color='black', linewidth=0.9)
 lakes_10m = cfeature.NaturalEarthFeature('physical','lakes','10m')
 ax.add_feature(cfeature.BORDERS, linewidth=1.2)
@@ -365,7 +365,7 @@ plt.xlim([28, 43])
 plt.ylim([-12.6, 6.6])
 
 ax = plt.subplot(7,4,16, projection=ccrs.PlateCarree())
-plt_sn4_p = plt.pcolormesh(coord['lon'], coord['lat'], sn4_p*2, cmap='jet', vmin=4.58, vmax=56.49)
+plt_sn4_p = plt.pcolormesh(coord['lon'], coord['lat'], sn4_p, cmap='jet', vmin=4.58, vmax=56.49)
 ax.coastlines(resolution='10m', color='black', linewidth=0.9)
 lakes_10m = cfeature.NaturalEarthFeature('physical','lakes','10m')
 ax.add_feature(cfeature.BORDERS, linewidth=1.2)
@@ -501,6 +501,7 @@ cb4_axes = plt.gcf().add_axes([0.89, 0.155, 0.013, 0.255])
 cb4 = plt.colorbar(plt_sn4_dfca, cb4_axes,
                    label='Difference in Temperature ($\mathregular{^o}$C)', 
                    orientation='vertical')
+plt.show()
 
 
 
@@ -572,33 +573,33 @@ may_model_std = np.std(model_test[11,:,:,0]/scale_model_test)
 
 
 #WRF-DCA prediction means
-june_dca = np.mean(prediction[0,:,:,0]*2/scale_model_val)
-july_dca = np.mean(prediction[1,:,:,0]*2/scale_model_val)
-aug_dca = np.mean(prediction[2,:,:,0]*2/scale_model_val)
-sep_dca = np.mean(prediction[3,:,:,0]*2/scale_model_val)
-oct_dca = np.mean(prediction[4,:,:,0]*2/scale_model_val)
-nov_dca = np.mean(prediction[5,:,:,0]*2/scale_model_val)
-dec_dca = np.mean(prediction[6,:,:,0]*2/scale_model_val)
-jan_dca = np.mean(prediction[7,:,:,0]*2/scale_model_val)
-feb_dca = np.mean(prediction[8,:,:,0]*2/scale_model_val)
-mar_dca = np.mean(prediction[9,:,:,0]*2/scale_model_val)
-apr_dca = np.mean(prediction[10,:,:,0]*2/scale_model_val)
-may_dca = np.mean(prediction[11,:,:,0]*2/scale_model_val)
+june_dca = np.mean(prediction[0,:,:,0]/scale_model_val)
+july_dca = np.mean(prediction[1,:,:,0]/scale_model_val)
+aug_dca = np.mean(prediction[2,:,:,0]/scale_model_val)
+sep_dca = np.mean(prediction[3,:,:,0]/scale_model_val)
+oct_dca = np.mean(prediction[4,:,:,0]/scale_model_val)
+nov_dca = np.mean(prediction[5,:,:,0]/scale_model_val)
+dec_dca = np.mean(prediction[6,:,:,0]/scale_model_val)
+jan_dca = np.mean(prediction[7,:,:,0]/scale_model_val)
+feb_dca = np.mean(prediction[8,:,:,0]/scale_model_val)
+mar_dca = np.mean(prediction[9,:,:,0]/scale_model_val)
+apr_dca = np.mean(prediction[10,:,:,0]/scale_model_val)
+may_dca = np.mean(prediction[11,:,:,0]/scale_model_val)
 
 
 #WRF-DCA prediction standard deviations
-june_dca_std = np.std(prediction[0,:,:,0]*2/scale_model_val)
-july_dca_std = np.std(prediction[1,:,:,0]*2/scale_model_val)
-aug_dca_std = np.std(prediction[2,:,:,0]*2/scale_model_val)
-sep_dca_std = np.std(prediction[3,:,:,0]*2/scale_model_val)
-oct_dca_std = np.std(prediction[4,:,:,0]*2/scale_model_val)
-nov_dca_std = np.std(prediction[5,:,:,0]*2/scale_model_val)
-dec_dca_std = np.std(prediction[6,:,:,0]*2/scale_model_val)
-jan_dca_std = np.std(prediction[7,:,:,0]*2/scale_model_val)
-feb_dca_std = np.std(prediction[8,:,:,0]*2/scale_model_val)
-mar_dca_std = np.std(prediction[9,:,:,0]*2/scale_model_val)
-apr_dca_std = np.std(prediction[10,:,:,0]*2/scale_model_val)
-may_dca_std = np.std(prediction[11,:,:,0]*2/scale_model_val)
+june_dca_std = np.std(prediction[0,:,:,0]/scale_model_val)
+july_dca_std = np.std(prediction[1,:,:,0]/scale_model_val)
+aug_dca_std = np.std(prediction[2,:,:,0]/scale_model_val)
+sep_dca_std = np.std(prediction[3,:,:,0]/scale_model_val)
+oct_dca_std = np.std(prediction[4,:,:,0]/scale_model_val)
+nov_dca_std = np.std(prediction[5,:,:,0]/scale_model_val)
+dec_dca_std = np.std(prediction[6,:,:,0]/scale_model_val)
+jan_dca_std = np.std(prediction[7,:,:,0]/scale_model_val)
+feb_dca_std = np.std(prediction[8,:,:,0]/scale_model_val)
+mar_dca_std = np.std(prediction[9,:,:,0]/scale_model_val)
+apr_dca_std = np.std(prediction[10,:,:,0]/scale_model_val)
+may_dca_std = np.std(prediction[11,:,:,0]/scale_model_val)
 
 
 
@@ -651,18 +652,18 @@ NMB_may = np.mean((model_test[11,:,:,0]/scale_model_test) - obs_test[11,:,:])/np
 
 
 #Calculate Normalized Mean Bias (NMB) for WRF-DCA
-NMB_dca_june = np.mean((prediction[0,:,:,0]*2/scale_model_val) - obs_test[0,:,:])/np.mean(obs_test[0,:,:])
-NMB_dca_july = np.mean((prediction[1,:,:,0]*2/scale_model_val) - obs_test[1,:,:])/np.mean(obs_test[1,:,:])
-NMB_dca_aug = np.mean((prediction[2,:,:,0]*2/scale_model_val) - obs_test[2,:,:])/np.mean(obs_test[2,:,:])
-NMB_dca_sep = np.mean((prediction[3,:,:,0]*2/scale_model_val) - obs_test[3,:,:])/np.mean(obs_test[3,:,:])
-NMB_dca_oct = np.mean((prediction[4,:,:,0]*2/scale_model_val) - obs_test[4,:,:])/np.mean(obs_test[4,:,:])
-NMB_dca_nov = np.mean((prediction[5,:,:,0]*2/scale_model_val) - obs_test[5,:,:])/np.mean(obs_test[5,:,:])
-NMB_dca_dec = np.mean((prediction[6,:,:,0]*2/scale_model_val) - obs_test[6,:,:])/np.mean(obs_test[6,:,:])
-NMB_dca_jan = np.mean((prediction[7,:,:,0]*2/scale_model_val) - obs_test[7,:,:])/np.mean(obs_test[7,:,:])
-NMB_dca_feb = np.mean((prediction[8,:,:,0]*2/scale_model_val) - obs_test[8,:,:])/np.mean(obs_test[8,:,:])
-NMB_dca_mar = np.mean((prediction[9,:,:,0]*2/scale_model_val) - obs_test[9,:,:])/np.mean(obs_test[9,:,:])
-NMB_dca_apr = np.mean((prediction[10,:,:,0]*2/scale_model_val) - obs_test[10,:,:])/np.mean(obs_test[10,:,:])
-NMB_dca_may = np.mean((prediction[11,:,:,0]*2/scale_model_val) - obs_test[11,:,:])/np.mean(obs_test[11,:,:])
+NMB_dca_june = np.mean((prediction[0,:,:,0]/scale_model_val) - obs_test[0,:,:])/np.mean(obs_test[0,:,:])
+NMB_dca_july = np.mean((prediction[1,:,:,0]/scale_model_val) - obs_test[1,:,:])/np.mean(obs_test[1,:,:])
+NMB_dca_aug = np.mean((prediction[2,:,:,0]/scale_model_val) - obs_test[2,:,:])/np.mean(obs_test[2,:,:])
+NMB_dca_sep = np.mean((prediction[3,:,:,0]/scale_model_val) - obs_test[3,:,:])/np.mean(obs_test[3,:,:])
+NMB_dca_oct = np.mean((prediction[4,:,:,0]/scale_model_val) - obs_test[4,:,:])/np.mean(obs_test[4,:,:])
+NMB_dca_nov = np.mean((prediction[5,:,:,0]/scale_model_val) - obs_test[5,:,:])/np.mean(obs_test[5,:,:])
+NMB_dca_dec = np.mean((prediction[6,:,:,0]/scale_model_val) - obs_test[6,:,:])/np.mean(obs_test[6,:,:])
+NMB_dca_jan = np.mean((prediction[7,:,:,0]/scale_model_val) - obs_test[7,:,:])/np.mean(obs_test[7,:,:])
+NMB_dca_feb = np.mean((prediction[8,:,:,0]/scale_model_val) - obs_test[8,:,:])/np.mean(obs_test[8,:,:])
+NMB_dca_mar = np.mean((prediction[9,:,:,0]/scale_model_val) - obs_test[9,:,:])/np.mean(obs_test[9,:,:])
+NMB_dca_apr = np.mean((prediction[10,:,:,0]/scale_model_val) - obs_test[10,:,:])/np.mean(obs_test[10,:,:])
+NMB_dca_may = np.mean((prediction[11,:,:,0]/scale_model_val) - obs_test[11,:,:])/np.mean(obs_test[11,:,:])
 
 
 #Calculate Normalized Mean Bias (NMB) for WRF-LS
@@ -698,18 +699,18 @@ RMSE_may = np.sqrt(np.mean(((model_test[11,:,:,0]/scale_model_test) - (obs_test[
 
 
 #Calculate Root Mean Square Error (RMSE)  for WRF-DCA
-RMSE_dca_june = np.sqrt(np.mean(((prediction[0,:,:,0]*2/scale_model_val) - (obs_test[0,:,:]))**2))
-RMSE_dca_july = np.sqrt(np.mean(((prediction[1,:,:,0]*2/scale_model_val) - (obs_test[1,:,:]))**2))
-RMSE_dca_aug = np.sqrt(np.mean(((prediction[2,:,:,0]*2/scale_model_val) - (obs_test[2:,:]))**2))
-RMSE_dca_sep = np.sqrt(np.mean(((prediction[3,:,:,0]*2/scale_model_val) - (obs_test[3,:,:]))**2))
-RMSE_dca_oct = np.sqrt(np.mean(((prediction[4,:,:,0]*2/scale_model_val) - (obs_test[4,:,:]))**2))
-RMSE_dca_nov = np.sqrt(np.mean(((prediction[5,:,:,0]*2/scale_model_val) - (obs_test[5,:,:]))**2))
-RMSE_dca_dec = np.sqrt(np.mean(((prediction[6,:,:,0]*2/scale_model_val) - (obs_test[6,:,:]))**2))
-RMSE_dca_jan = np.sqrt(np.mean(((prediction[7,:,:,0]*2/scale_model_val) - (obs_test[7,:,:]))**2))
-RMSE_dca_feb = np.sqrt(np.mean(((prediction[8,:,:,0]*2/scale_model_val) - (obs_test[8,:,:]))**2))
-RMSE_dca_mar = np.sqrt(np.mean(((prediction[9,:,:,0]*2/scale_model_val) - (obs_test[9,:,:]))**2))
-RMSE_dca_apr = np.sqrt(np.mean(((prediction[10,:,:,0]*2/scale_model_val) - (obs_test[10,:,:]))**2))
-RMSE_dca_may = np.sqrt(np.mean(((prediction[11,:,:,0]*2/scale_model_val) - (obs_test[11,:,:]))**2))
+RMSE_dca_june = np.sqrt(np.mean(((prediction[0,:,:,0]/scale_model_val) - (obs_test[0,:,:]))**2))
+RMSE_dca_july = np.sqrt(np.mean(((prediction[1,:,:,0]/scale_model_val) - (obs_test[1,:,:]))**2))
+RMSE_dca_aug = np.sqrt(np.mean(((prediction[2,:,:,0]/scale_model_val) - (obs_test[2:,:]))**2))
+RMSE_dca_sep = np.sqrt(np.mean(((prediction[3,:,:,0]/scale_model_val) - (obs_test[3,:,:]))**2))
+RMSE_dca_oct = np.sqrt(np.mean(((prediction[4,:,:,0]/scale_model_val) - (obs_test[4,:,:]))**2))
+RMSE_dca_nov = np.sqrt(np.mean(((prediction[5,:,:,0]/scale_model_val) - (obs_test[5,:,:]))**2))
+RMSE_dca_dec = np.sqrt(np.mean(((prediction[6,:,:,0]/scale_model_val) - (obs_test[6,:,:]))**2))
+RMSE_dca_jan = np.sqrt(np.mean(((prediction[7,:,:,0]/scale_model_val) - (obs_test[7,:,:]))**2))
+RMSE_dca_feb = np.sqrt(np.mean(((prediction[8,:,:,0]/scale_model_val) - (obs_test[8,:,:]))**2))
+RMSE_dca_mar = np.sqrt(np.mean(((prediction[9,:,:,0]/scale_model_val) - (obs_test[9,:,:]))**2))
+RMSE_dca_apr = np.sqrt(np.mean(((prediction[10,:,:,0]/scale_model_val) - (obs_test[10,:,:]))**2))
+RMSE_dca_may = np.sqrt(np.mean(((prediction[11,:,:,0]/scale_model_val) - (obs_test[11,:,:]))**2))
 
 
 #Calculate Root Mean Square Error (RMSE) for WRF_LS
@@ -785,7 +786,7 @@ plt.text(0.03, 0.7, '(c)', transform=ax1.transAxes)
 labels_d =['WRF-Chem', 'WRF-LS', 'WRF-DCA']
 plt.legend([p8, p9, p10], labels=labels_d, loc='upper left',
            bbox_to_anchor=(1.3, 0.5), edgecolor='none')
-
+plt.show()
 
 
 
@@ -932,7 +933,7 @@ ax.add_line(line)
 #WRF-DCA
 ax = plt.subplot(3,4,9)
 x9 = sn1_o.flatten()
-y9 = (np.asarray(sn1_p*2)).flatten()
+y9 = (np.asarray(sn1_p)).flatten()
 x9y9 = np.vstack([x9,y9])
 z9 = gaussian_kde(x9y9)(x9y9)
 idx9 = z9.argsort()
@@ -948,7 +949,7 @@ plt.title('JJA (R=0.95)')
 
 ax = plt.subplot(3,4,10)
 x10 = sn2_o.flatten()
-y10 = (np.asarray(sn2_p*2)).flatten()
+y10 = (np.asarray(sn2_p)).flatten()
 x10y10 = np.vstack([x10,y10])
 z10 = gaussian_kde(x10y10)(x10y10)
 idx10 = z10.argsort()
@@ -963,7 +964,7 @@ plt.title('SON (R=0.96)')
 
 ax = plt.subplot(3,4,11)
 x11 = sn3_o.flatten()
-y11 = (np.asarray(sn3_p*2)).flatten()
+y11 = (np.asarray(sn3_p)).flatten()
 x11y11 = np.vstack([x11,y11])
 z11 = gaussian_kde(x11y11)(x11y11)
 idx11 = z11.argsort()
@@ -978,7 +979,7 @@ plt.title('DJF (R=0.93)')
 
 ax = plt.subplot(3,4,12)
 x12 = sn4_o.flatten()
-y12 = (np.asarray(sn4_p*2)).flatten()
+y12 = (np.asarray(sn4_p)).flatten()
 x12y12 = np.vstack([x12,y12])
 z12 = gaussian_kde(x12y12)(x12y12)
 idx12 = z12.argsort()
@@ -993,4 +994,4 @@ transform = ax.transAxes
 line.set_transform(transform)
 ax.add_line(line)
 fig.tight_layout()
-
+plt.show()
