@@ -1,4 +1,4 @@
-# Deep-Convolutional-AutoEncoder
+# Deep Convolutional AutoEncoder
 This repository is for convolutional autoencoder algorithms that can be used to bias correct and analyze output from a numerical model. The algorithms used here were tested on the WRF-chem model for bias correcting simulations of Nitorgen dioxide (NO2), Carbon monoxide (CO), Rainfall and Temperature. All the observations used were obtained from NASA satellites, that is, the Ozone Monitoring Instrument (OMI) for NO2, Measurement of Pollution in the Troposphere (MOPITT) for CO, Global Precipitation Measurement (GPM) for Rainfall and Moderate Resolution Imaging Spectroradiometer (MODIS) for Temperature. The scripts are in the 'python_scripts' folder. Please refer to the README file therein for further details.
 
 # Reference research article:
